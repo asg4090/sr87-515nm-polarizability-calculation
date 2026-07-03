@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Generated local outputs
+outputs/
+*.log
+*.aux
+*.fls
+*.fdb_latexmk
+*.xdv
+*.synctex.gz
+
+# Local smoke-test artifacts
+result_*.json

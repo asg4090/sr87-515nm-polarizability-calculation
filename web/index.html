@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sr-87 Magic Wavelength Explorer</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Sr-87 polarizability · 495.5-534.5 nm</p>
+        <h1>Magic Wavelength Explorer</h1>
+        <p class="lead">
+          Choose one polarizability source, a transition channel, and a trapping-light geometry.
+          The page projects the offline electronic polarizability grid onto Sr-87 hyperfine states,
+          draws the differential polarizability curve, and finds magic-wavelength zero crossings by interpolation.
+        </p>
+      </div>
+      <div class="heroMeta">
+        <span id="dataStatus">Loading data...</span>
+        <strong id="gridMeta">--</strong>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="query controls">
+      <label>
+        <span>Source</span>
+        <select id="sourceModel">
+          <option value="current_sos">Current SOS</option>
+          <option value="sr1pol_projected">Sr1Pol projected</option>
+        </select>
+      </label>
+      <label>
+        <span>Excited state</span>
+        <select id="excitedState"></select>
+      </label>
+      <label>
+        <span>Excited F</span>
+        <select id="excitedF"></select>
+      </label>
+      <label>
+        <span>Delta mF</span>
+        <select id="deltaMf">
+          <option value="0">0: pi / same mF</option>
+          <option value="1">+1: sigma+</option>
+          <option value="-1">-1: sigma-</option>
+        </select>
+      </label>
+      <label>
+        <span>Ground mF</span>
+        <select id="groundMf"></select>
+      </label>
+      <label>
+        <span>Excited mF</span>
+        <select id="excitedMf"></select>
+      </label>
+      <label>
+        <span>Polarization family</span>
+        <select id="polarizationFamily">
+          <option value="linear_xz">linear_xz: linear angle theta</option>
+          <option value="elliptical_xy">elliptical_xy: ellipticity angle gamma</option>
+        </select>
+      </label>
+      <label>
+        <span id="parameterLabel">theta</span>
+        <input id="parameter" type="range" min="0" max="0" step="1" value="0" />
+      </label>
+      <label>
+        <span>Parameter value</span>
+        <select id="parameterValue"></select>
+      </label>
+      <label>
+        <span>Readout wavelength (nm)</span>
+        <input id="wavelength" type="number" min="495.5" max="534.5" step="0.001" value="515.2" />
+      </label>
+    </section>
+
+    <section class="cards">
+      <article class="card primary">
+        <span>Selected magic wavelength</span>
+        <strong id="selectedMagic">--</strong>
+        <small id="selectedMagicNote">--</small>
+      </article>
+      <article class="card">
+        <span>Delta alpha at readout</span>
+        <strong id="deltaAtLambda">--</strong>
+        <small id="deltaAtLambdaNote">alpha_excited - alpha_ground, a.u.</small>
+      </article>
+      <article class="card">
+        <span>Active source</span>
+        <strong id="sourceCard">--</strong>
+        <small id="sourceCardNote">--</small>
+      </article>
+    </section>
+
+    <section class="layout">
+      <article class="panel mainChart">
+        <div class="panelHeader">
+          <div>
+            <h2>Differential Polarizability Scan</h2>
+            <p>The zero crossings of this single-source curve are the magic-wavelength candidates for the selected channel and geometry.</p>
+          </div>
+          <div class="legend">
+            <span><i id="curveLegendColor" class="blue"></i><span id="curveLegend">Selected source</span></span>
+          </div>
+        </div>
+        <canvas id="deltaChart" width="1200" height="520"></canvas>
+      </article>
+
+      <aside class="panel">
+        <h2>How To Read This Page</h2>
+        <dl class="explain">
+          <dt>Current SOS</dt>
+          <dd>The recommended sum-over-states electronic polarizability data from this project, projected to Sr-87 hyperfine states.</dd>
+          <dt>Sr1Pol projected</dt>
+          <dd>A reference workflow that uses Sr1Pol/Sr-88 electronic alpha0, alpha1, alpha2 curves and applies the same Sr-87 Clebsch-Gordan projection.</dd>
+          <dt>Delta mF</dt>
+          <dd>The compared transition channel: 0 is a pi or same-mF channel, while +1 and -1 are common sigma channels. This is not the same as the trapping-light polarization geometry.</dd>
+          <dt>clean</dt>
+          <dd>A root that does not trigger this package's 3P2 near-resonance rule. It is not a guarantee of low experimental scattering.</dd>
+          <dt>selected root</dt>
+          <dd>The browser finds every zero crossing and selects the clean root closest to 515.2 nm. If no clean root exists, it reports the nearest risky root.</dd>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="layout single">
+      <article class="panel">
+        <div class="panelHeader">
+          <div>
+            <h2>Nearby Channel Candidates</h2>
+            <p>For the current source, state, polarization family, and Delta mF, this table scans allowed mF channels and lists their selected roots.</p>
+          </div>
+          <label class="inlineToggle"><input id="cleanOnly" type="checkbox" checked /> only clean</label>
+        </div>
+        <div id="candidateTable" class="tableBox"></div>
+      </article>
+    </section>
+
+    <details class="panel diagnosticPanel">
+      <summary>
+        <span>Advanced diagnostics: all roots for the current condition</span>
+        <small id="rootsSummary">--</small>
+      </summary>
+      <p class="panelNote">
+        This section lists every zero crossing for the currently selected source and channel. It is mainly useful when there are multiple roots or a 3P2 near-resonance risk flag.
+      </p>
+      <div id="rootsTable" class="tableBox"></div>
+    </details>
+
+    <section class="layout two">
+      <article class="panel">
+        <h2>Scope</h2>
+        <ul class="notes">
+          <li>The wavelength window is fixed to 495.5-534.5 nm. The page does not extrapolate outside this range.</li>
+          <li>Magic wavelengths are found from a 0.02 nm offline grid using adjacent-point linear interpolation.</li>
+          <li>Delta mF=0 is the same-mF special case; Delta mF=+1 and -1 are included for sigma-channel checks.</li>
+          <li>Elliptical or circular trapping light activates the vector polarizability contribution and can increase sensitivity to alpha1 data quality.</li>
+          <li>3P2 roots must be reviewed with scattering, heating, and near-resonance distance before choosing an experimental operating point.</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>Source Policy</h2>
+        <p class="panelNote">
+          The main page intentionally displays one source at a time. Use the Source selector to switch between the project SOS result and the Sr1Pol-projected reference workflow.
+          The two sources should be compared as alternative inputs, not averaged into one result.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <span>Data: bundled Sr-87 projection grid and Sr1Pol reference grid.</span>
+      <span>Static page, no backend computation.</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

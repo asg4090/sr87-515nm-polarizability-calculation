@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "Sr-87 515 nm Polarizability Toolkit"
+message: "If you use this software or data, please cite this repository and the source literature listed in DATA_SOURCES.md."
+type: software
+authors:
+  - name: "Sr-87 515 nm Polarizability Project Contributors"
+date-released: 2026-07-03
+license: MIT
+keywords:
+  - strontium
+  - Sr-87
+  - polarizability
+  - magic wavelength
+  - optical tweezers
+repository-code: "https://github.com/asg4090/sr87-515nm-polarizability-calculation"
+abstract: "Calculation and visualization package for Sr-87 dynamic polarizability and magic-wavelength candidates near 515 nm."

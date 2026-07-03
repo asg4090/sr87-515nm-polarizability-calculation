@@ -1,0 +1,21 @@
+source,state_label,wavelength_nm,component,mJ,target_au,uncertainty_au,note
+Cooper_PRX_2018,5s2 1S0,515.2,scalar,,941.8,,Recommended total scalar polarizability
+Cooper_PRX_2018,5s5p 3P1,515.2,scalar,,769.4,,Recommended scalar polarizability
+Cooper_PRX_2018,5s5p 3P1,515.2,tensor,,-110.5,,Recommended tensor polarizability
+Cooper_PRX_2018,5s5p 3P1,515.2,effective,0,990.4,,Linear polarization along the quantization axis
+Cooper_PRX_2018,5s5p 3P1,515.2,effective,1,658.9,,Linear polarization along the quantization axis
+Cooper_PRX_2018,5s5p 3P1,515.2,vector_tensor_ratio,,0.10,0.04,Measured absolute ratio |alpha_v|/|alpha_t|
+Cooper_PRX_2018,5s5p 3P1,515.2,Q,,-5.8,,Recommended theoretical Q value
+Madjarov_Thesis,5s2 1S0,813.4,effective,0,286.0,,Table 2.2 value
+Madjarov_Thesis,5s5p 3P0,813.4,effective,0,286.0,,Table 2.2 value
+Madjarov_Thesis,5s5p 3P1,813.4,effective,0,195.1,,Table 2.2 value
+Madjarov_Thesis,5s5p 3P1,813.4,effective,1,353.9,,Table 2.2 value
+Madjarov_Thesis,5s5p 3P2,515.2,effective,0,607.9,,3P2 mJ-resolved value quoted in Madjarov thesis / agent search result
+Madjarov_Thesis,5s5p 3P2,515.2,effective,1,728.6,,3P2 |mJ|=1 value quoted in Madjarov thesis / agent search result
+Madjarov_Thesis,5s5p 3P2,515.2,effective,2,1091.0,,3P2 |mJ|=2 value quoted in Madjarov thesis / agent search result
+Trautmann_PRR_2023,5s5p 3P2,1064.0,scalar,,197.14,,Table II total scalar polarizability at 1064 nm
+Trautmann_PRR_2023,5s5p 3P2,1064.0,vector,,-354.90,,Table II total vector polarizability at 1064 nm
+Trautmann_PRR_2023,5s5p 3P2,1064.0,tensor,,-48.56,,Table II total tensor polarizability at 1064 nm
+Kestler_PRA_2022,5s5p 3P1,473.375,effective,0,3573,92,Table II alpha(m=0)=alpha0-2alpha2 near 473 nm magic wavelength
+Kestler_PRA_2022,5s5p 3P1,473.375,scalar,,2805,91,Table II alpha0 at 473.375 nm; not alpha(|m|=1). alpha(|m|=1)=alpha0+alpha2 is about 2421 a.u.
+Kestler_PRA_2022,5s5p 3P1,473.375,tensor,,-384,14,Table II alpha2 at 473.375 nm

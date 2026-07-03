@@ -1,0 +1,17 @@
+dataset,state_label,component,window_min_nm,window_max_nm,value_au,uncertainty_au,enabled_by_default,source,note
+cooper_2018_515,5s2 1S0,scalar,495,535,7.3,,1,Cooper et al. PRX 8 041055 (2018) Table I,Other contribution at 515.2 nm
+cooper_2018_515,5s2 1S0,scalar,495,535,5.3,,1,Cooper et al. PRX 8 041055 (2018) Table I,Core contribution at 515.2 nm
+cooper_2018_515,5s5p 3P1,scalar,495,535,66.9,,1,Cooper et al. PRX 8 041055 (2018) Table I,Other contribution at 515.2 nm
+cooper_2018_515,5s5p 3P1,tensor,495,535,0.2,,1,Cooper et al. PRX 8 041055 (2018) Table I,Other contribution at 515.2 nm
+cooper_2018_515,5s5p 3P1,scalar,495,535,5.6,,1,Cooper et al. PRX 8 041055 (2018) Table I,Core contribution at 515.2 nm
+cooper_2018_515_vector_constraint,5s5p 3P1,vector,495,535,-8.07,4.42,0,Cooper et al. PRX 8 041055 (2018) Appendix B,Optional residual chosen so that |alpha_v|/|alpha_t| matches the measured 0.10(4) ratio at 515.2 nm
+madjarov_813,5s2 1S0,scalar,800,1070,2.4,,1,Madjarov thesis Table B.1,Other contribution in the 800-1070 nm window
+madjarov_813,5s2 1S0,scalar,800,1070,5.4,,1,Madjarov thesis Table B.1,Core polarizability
+madjarov_813,5s2 1S0,scalar,800,1070,-0.11,,1,Madjarov thesis Table B.1,Valence-core polarizability
+madjarov_813,5s5p 3P0,scalar,800,1070,34.1,,1,Madjarov thesis Table B.1,Other contribution in the 800-1070 nm window
+madjarov_813,5s5p 3P0,scalar,800,1070,5.4,,1,Madjarov thesis Table B.1,Core polarizability
+madjarov_813,5s5p 3P0,scalar,800,1070,0.15,,1,Madjarov thesis Table B.1,Valence-core polarizability
+madjarov_813,5s5p 3P1,scalar,800,1070,5.4,,1,Madjarov thesis Table B.1,Core polarizability only; higher-lying residual not specified explicitly in the thesis
+madjarov_813,5s5p 3P1,scalar,800,1070,0.15,,1,Madjarov thesis Table B.1,Valence-core polarizability
+madjarov_813_3p1_scalar_constraint,5s5p 3P1,scalar,800,1070,43.59,,0,Derived from Madjarov thesis Table 2.2 and Cooper et al. PRX 8 041055 (2018),Optional scalar background that reproduces the thesis 813.4 nm mJ-resolved values after using Cooper recommended tensor channels; disabled by default because it is not an independently tabulated channel contribution
+trautmann_2023_3p2_core,5s5p 3P2,scalar,495,535,5.6,,1,Trautmann et al. PRR 5 013219 (2023) Table II,Core contribution tabulated for 3P2; used as first-pass core residual in the 495-535 nm delivery scenario.

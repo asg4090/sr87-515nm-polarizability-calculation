@@ -1,0 +1,31 @@
+state,wavenumber_cm,Aki_s,partner_J,upper_J,sign,partner_label,source
+1S0,45565.08,2.56e5,1,1,1,5s20p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,45518.69,3.2e5,1,1,1,5s19p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,45463.25,4.2e5,1,1,1,5s18p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,45395.47,5.0e5,1,1,1,5s17p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,45311.87,6.4e5,1,1,1,5s16p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,45207.98,8.5e5,1,1,1,5s15p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,45075.36,1.17e6,1,1,1,5s14p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,44903.54,1.57e6,1,1,1,5s13p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,44675.77,2.4e6,1,1,1,5s12p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,44366.48,3.7e6,1,1,1,5s11p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,43936.60,6.6e6,1,1,1,5s10p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,43328.04,1.15e7,1,1,1,5s9p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,42462.136,1.8e7,1,1,1,5s8p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,41172.053,1.7e7,1,1,1,4d5p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,38906.890,5.3e6,1,1,1,5s7p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,34098.414,1.9e6,1,1,1,5s6p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,21698.462,2.01e8,1,1,1,5s5p 1P1,NIST ASD / Sansonetti-Nave 2010
+1S0,14504.343,4.69e4,1,1,1,5s5p 3P1,NIST ASD / Sansonetti-Nave 2010
+3P0,30278.398,5.9e7,1,1,1,4d2 3P1,NIST ASD / Sansonetti-Nave 2010
+3P0,23107.167,3.1e6,1,1,1,5s7s 3S1,NIST ASD / Sansonetti-Nave 2010
+3P0,21082.599,3.9e7,1,1,1,5p2 3P1,NIST ASD / Sansonetti-Nave 2010
+3P0,20689.399,3.3e7,1,1,1,5s5d 3D1,NIST ASD / Sansonetti-Nave 2010
+3P0,14721.261,8.9e6,1,1,1,5s6s 3S1,NIST ASD / Sansonetti-Nave 2010
+3P1,14504.343,4.69e4,0,1,-1,1S0,NIST ASD / Sansonetti-Nave 2010
+3P1,14534.438,2.7e7,1,1,1,5s6s 3S1,NIST ASD / Sansonetti-Nave 2010
+3P1,22920.346,9.7e6,1,1,1,5s7s 3S1,NIST ASD / Sansonetti-Nave 2010
+3P1,21170.298,3.6e7,2,2,1,5p2 3P2,NIST ASD / Sansonetti-Nave 2010
+3P1,20895.770,3.0e7,1,1,1,5p2 3P1,NIST ASD / Sansonetti-Nave 2010
+3P1,20517.644,4.8e7,2,2,1,5s5d 3D2,NIST ASD / Sansonetti-Nave 2010
+3P1,20502.572,2.63e7,1,1,1,5s5d 3D1,NIST ASD / Sansonetti-Nave 2010
